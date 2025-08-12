@@ -37,6 +37,39 @@ const IntroduceContainer = createContainer(() => {
 
   console.log(pastMeetingList);
 
+  // 기존 리액트 방식
+  // const { data: resData } = useQuery({
+  //   queryKey: ["CommonControllerApi", "getCommonCodeList", "FIELD_OF_STUDY"],
+  //   queryFn: () =>
+  //     axiosApi(CommonControllerApi)
+  //       .getCommonCodeList({ codetype: "FIELD_OF_STUDY" })
+  //       .then((res) => res.data),
+  //   enabled: isLogin && isEngSpec,
+  // });
+
+  // 미팅 데이터 생성 api
+  //  const createMeeting = ({
+  //   data,
+  //   onSuccess,
+  // }: {
+  //   data: ReqEventDto;
+  //   onSuccess?: () => void;
+  // }) => {
+  //   axiosApi(CalendarApi)
+  //     .saveCounselingEvent({
+  //       reqEventDto: data,
+  //     })
+  //     .then((res) => {
+  //       setIsMeetingFetching(false);
+  //       success(t("Meeting created successfully"));
+  //       onSuccess?.();
+  //       createMeetingModal.close();
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // };
+
   const handleAddPet = (petData: any) => {
     mutateAddPet({
       data: {
