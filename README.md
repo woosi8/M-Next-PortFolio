@@ -1,6 +1,6 @@
 # Hyuck Portfoilo
 
-Next.js 기반의 포트폴리오 입니다. 
+Next.js 기반의 포트폴리오 입니다. (모바일)
 
 ## 프로젝트 개요
 
