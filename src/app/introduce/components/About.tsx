@@ -2,10 +2,12 @@
 
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import IntroduceContainer from "../IntroduceContainer";
 
 const About = () => {
   const { isDarkMode } = useDarkMode();
   const { ref, isVisible } = useScrollAnimation();
+  const { handleAddPet, isPending } = IntroduceContainer.useContainer();
   const awards = [
     {
       year: "2020 ~ 2021",
@@ -82,6 +84,30 @@ const About = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <button
+              onClick={() => 
+                handleAddPet({
+                  name: "Hyuck's Pet",
+                  photoUrls: ["https://example.com/pet.jpg"],
+                  status: "available",
+                  category: {
+                    id: 1,
+                    name: "Dogs"
+                  }
+                })
+              }
+              disabled={isPending}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                isPending 
+                  ? "bg-gray-500 cursor-not-allowed" 
+                  : "bg-green-600 hover:bg-green-700 active:scale-95"
+              } text-white shadow-md hover:shadow-lg`}
+            >
+              {isPending ? "추가 중..." : "🐕 Pet 추가 테스트"}
+            </button>
           </div>
         </div>
       </div>

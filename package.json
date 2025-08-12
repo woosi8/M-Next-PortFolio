@@ -6,11 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gen": "rm -rf src/common/api/generated && orval --config orval.config.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@tanstack/react-query": "^5.84.2",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
     "next": "15.3.3",
+    "orval": "^7.11.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "unstated-next": "^1.1.0",
