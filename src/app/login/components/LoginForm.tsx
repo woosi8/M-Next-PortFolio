@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import LoginContainer from "../LoginContainer";
+import PwaInstallButton from "./PwaInstallButton";
 
 const LoginForm = () => {
   const emailInputRef = useRef<HTMLInputElement>(null);
@@ -126,6 +127,8 @@ const LoginForm = () => {
               테스트 계정: <span className="text-purple-300">qwer / 9999</span>
             </p>
           </div>
+
+          <PwaInstallButton />
         </div>
       </div>
     </div>
